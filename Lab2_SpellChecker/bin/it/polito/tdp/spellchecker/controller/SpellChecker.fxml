@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane prefHeight="577.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+   <top>
+      <Label text="Lab2_SpellChecker" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label lineSpacing="10.0" text="Choose the language" />
+                  <ComboBox fx:id="boxLanguage" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <TextArea fx:id="txtTesto">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </VBox.margin></TextArea>
+            <Button fx:id="buttonSpellCheck" lineSpacing="10.0" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check">
+               <VBox.margin>
+                  <Insets right="15.0" />
+               </VBox.margin></Button>
+            <TextFlow fx:id="txtResult" lineSpacing="5.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </VBox.margin>
+            </TextFlow>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Label fx:id="labelErrors" lineSpacing="10.0" text="Errori" textFill="#db1414" />
+                  <Button fx:id="buttonClear" lineSpacing="10.0" mnemonicParsing="false" onAction="#doClearText" text="Clear Text" />
+               </children>
+               <VBox.margin>
+                  <Insets right="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Label fx:id="labelTime" text="tempo" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="15.0" />
+         </BorderPane.margin></Label>
+   </bottom>
 </BorderPane>
